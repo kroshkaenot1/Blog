@@ -3,7 +3,6 @@ package com.ex.blog.config;
 import com.ex.blog.repository.models.Role;
 import com.ex.blog.services.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -27,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/getStats").hasAnyAuthority(Role.ADMIN.getAuthority())
-                .antMatchers("/createblog").hasAnyAuthority(Role.USER.getAuthority())
+                .antMatchers("/createBlog").hasAnyAuthority(Role.USER.getAuthority())
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
