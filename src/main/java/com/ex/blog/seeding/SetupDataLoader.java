@@ -29,10 +29,12 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         user.setRoles(Collections.singleton(Role.USER));
         userRepository.save(user);
         User admin = new User();
+
         admin.setRoles(Collections.singleton(Role.ADMIN));
         admin.setUsername("admin");
         admin.setPassword("0987");
         userRepository.save(admin);
+
         Blog blog = new Blog("Nature","Andrey","Bear");
         blogRepository.save(blog);
         Blog blog1 = new Blog("Beautiful creations","Vasiliy","Bee");

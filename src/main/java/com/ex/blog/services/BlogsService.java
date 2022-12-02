@@ -19,6 +19,7 @@ public class BlogsService {
         blogRepository.save(blog);
         return blog;
     }
+
     public Page<Blog> getBlogs(Pageable pageable) {
         return blogRepository.findAll(pageable);
     }
